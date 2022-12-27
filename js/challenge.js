@@ -1,4 +1,5 @@
 // See the timer increment every second once the page has loaded.
+const body = document.querySelector('body')
 const counter = document.querySelector('#counter')
 const minusBtn = document.querySelector('#minus')
 const plusBtn = document.querySelector('#plus')
@@ -73,10 +74,13 @@ document.addEventListener('DOMContentLoaded', () => {
       li.textContent = `${number} has been liked 1 time`
       likesList.appendChild(li)
     }
-   
-
   })
 
+  const restartBtn = document.createElement('button')
+  restartBtn.id = 'restart'
+  restartBtn.textContent = 'restart'
+  console.log('restart ', restartBtn)
+  body.append(restartBtn)
 })
 
 // Click the "restart" button to restart the counter and re-enable the buttons.
