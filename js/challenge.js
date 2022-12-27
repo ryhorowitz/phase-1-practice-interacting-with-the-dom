@@ -63,8 +63,11 @@ document.addEventListener('DOMContentLoaded', () => {
       likesList.appendChild(updateLi)
     } else {
       //no likesObj[number] = 1
-      let li = document.createElement('li').setAttribute("data-num", number.toString())
-     
+      let li = document.createElement('li')
+      li.setAttribute("data-num", number.toString())
+      // console.log('li is', li)
+
+      // console.log('num is', number)
       likeObj[number] = 1
       // '2 has been liked 1 time'
       li.textContent = `${number} has been liked 1 time`
