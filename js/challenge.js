@@ -6,7 +6,10 @@ const plusBtn = document.querySelector('#plus')
 const heartBtn = document.querySelector('#heart')
 const pauseBtn = document.querySelector('#pause')
 const likesList = document.querySelector('.likes')
+const form = document.querySelector('form')
+// console.log(form)
 const likeObj = {}
+const commentsList = document.createElement('ul')
 let number = Number(counter.textContent)
 let isPaused = false;
 
@@ -92,6 +95,17 @@ document.addEventListener('DOMContentLoaded', () => {
     heartBtn.disabled = false
   }
   restartBtn.addEventListener('click', resetCounter)
-})
 
-// Leave comments on my gameplay, such as: "Wow, what a fun game this is."
+  form.addEventListener('submit', (e) => {
+    e.preventDefault()
+    // Leave comments on my gameplay, such as: "Wow, what a fun game this is."
+    const comment = e.target.children[0].value
+    console.log(comment)
+
+    const commentLI = document.createElement('li')
+    commentLI.textContent = comment
+  commentsList.appendChild(commentLI)
+    body.append(commentsList)
+
+  })
+})
